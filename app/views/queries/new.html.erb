@@ -1,0 +1,50 @@
+
+<%= form_for(@query,:html =>{:id => "user_signup_form"}) do |f| %>
+    <% if @query.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@query.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <ul>
+            <% @query.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name, "Контактное лицо" %>
+      <br/>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "Введите ваш электронный адрес"%>
+      <br/>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone, "Введите ваш телефонный номер" %>
+      <br/>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :comment, "Комментарий" %>
+      <br/>
+      <%= f.text_field :comment %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit defined?(@button_label) ? @button_label : "Оставить заявку" %>
+    </div>
+
+    <p>
+      <br>Запрос не является бронированием тура и не накладывает на Вас каких-либо обязательств.
+      <br>Наш менеджер свяжется с Вами после получения запроса.
+      <br>Обращаем Ваше внимание, что предложения на сайте не являются публичной офертой и носят исключительно информационный характер.
+    </p>
+    </div>
+
+
+<% end %>

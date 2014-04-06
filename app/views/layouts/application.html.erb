@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta CHARSET="UTF-8">
+  <title>NinoSite</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+</head>
+<body>
+<header>
+  <div class="navbar" role="navigation">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div id="myCarousel" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="active item">
+                  <%=image_tag('Malta.png', :alt => "Malta1") %>
+                </div>
+
+                <div class="item">
+                  <%=image_tag('url.jpg', :alt => "url") %>
+                </div>
+
+                <div class="item">
+                <%=image_tag('malta4.jpg', :alt => "malta4") %>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="span12">
+          <ul class="nav nav-pills">
+            <li><%= link_to "О Компании", root_path %></li>
+            <li><%= link_to "Об отдыхе", rest_path %></li>
+            <li><%= link_to "Экскурсии на Мальте", programm_path %></li>
+            <li><%= link_to "Карты", maps_path %></li>
+            <li><%= link_to "Контакты", contacts_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid content">
+    <div class="row-fluid">
+      <div class="span12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="main">
+      <p style="text-align:center"><small>©1997-2014 Мальтийское Управление по Туризму<br>
+        Телефон (495) 223-15-06, e-mail: info@malta.ru<br></small></p>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
